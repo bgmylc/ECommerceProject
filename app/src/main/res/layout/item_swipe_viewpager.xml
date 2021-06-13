@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="itemS"
+            type="com.begumyolcu.ecommerceproject.entity.SwipeItem" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/midDistance"
+        android:background="@{itemS.swipeNumber == 2 ? @color/swipeColor2  : itemS.swipeNumber == 1 ? @color/swipeColor1  : @color/swipeColor3 }"
+        android:paddingEnd="@dimen/midDistance">
+
+        <ImageView
+            android:id="@+id/entrySwipeImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/entrySwipeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/swipeEdgeDistance"
+            android:fontFamily="@font/oswald"
+            android:gravity="center"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/titleDimen"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text="@{itemS.swipeText}" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSwipe1"
+            android:layout_width="@dimen/radioDimen"
+            android:layout_height="@dimen/radioDimen"
+            android:layout_marginBottom="@dimen/midDistance"
+            android:enabled="@{itemS.swipeNumber == 1 ? true  : false }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/radioButtonSwipe2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSwipe2"
+            android:layout_width="@dimen/radioDimen"
+            android:layout_height="@dimen/radioDimen"
+            android:layout_marginBottom="@dimen/midDistance"
+            android:enabled="@{itemS.swipeNumber == 2 ? true  : false }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/radioButtonSwipe3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/radioButtonSwipe1" />
+
+        <RadioButton
+            android:id="@+id/radioButtonSwipe3"
+            android:layout_width="@dimen/radioDimen"
+            android:layout_height="@dimen/radioDimen"
+            android:layout_marginBottom="@dimen/midDistance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:enabled="@{itemS.swipeNumber == 3 ? true  : false }"
+            app:layout_constraintStart_toEndOf="@+id/radioButtonSwipe2" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/radioDimen"
+            android:layout_height="@dimen/radioDimen"
+            android:layout_marginStart="@dimen/midDistance"
+            android:layout_marginBottom="@dimen/midDistance"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioButtonSwipe3"
+            app:srcCompat="@drawable/arrow_right" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/midDistance"
+            android:fontFamily="@font/oswald"
+            android:text="Login or Register"
+            android:textColor="@color/textColor1"
+            android:textSize="@dimen/smallTextDimen"
+            android:visibility="@{itemS.swipeNumber == 3 ? View.VISIBLE  : View.INVISIBLE }"
+            app:layout_constraintBottom_toTopOf="@+id/radioButtonSwipe1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

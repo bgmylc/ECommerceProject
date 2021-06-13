@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entry_nav"
+    app:startDestination="@id/entrySwipeFragment">
+
+    <fragment
+        android:id="@+id/entrySwipeFragment"
+        android:name="com.begumyolcu.ecommerceproject.EntrySwipeFragment"
+        android:label="EntrySwipeFragment"
+        tools:layout="@layout/fragment_entry_swipe"/>
+</navigation>

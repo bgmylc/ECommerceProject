@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ECommerceProject</string>
+    <string name="swipeItemText1">Are you tired of living in your bleak life?</string>
+    <string name="swipeItemText2">You want to blast into new galaxies?</string>
+    <string name="swipeItemText3">Then, you are in the right place!</string>
+    <string name="loginAccount">Already have an account? Welcome back!</string>
+    <string name="registerAccount">It is nice to see you join!</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

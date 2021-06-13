@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleDimen">36sp</dimen>
+    <dimen name="generalTextDimen">22sp</dimen>
+    <dimen name="smallTextDimen">14sp</dimen>
+    <dimen name="buttonTextDimen">18sp</dimen>
+    <dimen name="radioDimen">30dp</dimen>
+    <dimen name="priceDimen">44sp</dimen>
+    <dimen name="midDistance">16dp</dimen>
+    <dimen name="edgeDistance">32dp</dimen>
+    <dimen name="swipeEdgeDistance">64dp</dimen>
+    <dimen name="toolbarTitleDimen">26sp</dimen>
+</resources>
