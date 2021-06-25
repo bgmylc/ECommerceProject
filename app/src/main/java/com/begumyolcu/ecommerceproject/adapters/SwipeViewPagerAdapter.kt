@@ -4,9 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.ItemSwipeViewpagerBinding
 import com.begumyolcu.ecommerceproject.entity.SwipeItem
+import com.begumyolcu.ecommerceproject.entry.EntrySwipeFragment
 
 class SwipeViewPagerAdapter (var mContext: Context, var swipeItems : List<SwipeItem>) : RecyclerView.Adapter<SwipeViewPagerAdapter.SwipeViewPagerViewHolder>(){
 
@@ -30,6 +33,8 @@ class SwipeViewPagerAdapter (var mContext: Context, var swipeItems : List<SwipeI
         val swipeItem = swipeItems.get(position)
         holder.itemSwipe.itemS = swipeItem
         holder.itemSwipe.entrySwipeImageView.setImageResource(mContext.resources.getIdentifier(swipeItem.swipeImage, "drawable", mContext.packageName))
+        holder.itemSwipe.entrySwipeFragment = EntrySwipeFragment()
+
 
     }
 

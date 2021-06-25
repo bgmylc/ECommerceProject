@@ -4,10 +4,15 @@
     <dimen name="generalTextDimen">22sp</dimen>
     <dimen name="smallTextDimen">14sp</dimen>
     <dimen name="buttonTextDimen">18sp</dimen>
+    <dimen name="buttonCornerDimen">20dp</dimen>
     <dimen name="radioDimen">30dp</dimen>
     <dimen name="priceDimen">44sp</dimen>
+    <dimen name="smallDistance">8dp</dimen>
     <dimen name="midDistance">16dp</dimen>
     <dimen name="edgeDistance">32dp</dimen>
-    <dimen name="swipeEdgeDistance">64dp</dimen>
+    <dimen name="largeEdgeDistance">64dp</dimen>
+    <dimen name="midDimen">128dp</dimen>
+    <dimen name="largeDimen">256dp</dimen>
     <dimen name="toolbarTitleDimen">26sp</dimen>
+    <dimen name="generalImageDimen">180dp</dimen>
 </resources>

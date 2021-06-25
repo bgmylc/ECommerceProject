@@ -3,8 +3,15 @@
     <string name="swipeItemText1">Are you tired of living in your bleak life?</string>
     <string name="swipeItemText2">You want to blast into new galaxies?</string>
     <string name="swipeItemText3">Then, you are in the right place!</string>
-    <string name="loginAccount">Already have an account? Welcome back!</string>
+    <string name="emailHint">Email</string>
+    <string name="passwordHint">Password</string>
+    <string name="loginButton">Login</string>
+    <string name="registerButton">Register</string>
+    <string name="loginAccount">Already have an account?<br />Welcome back!</string>
+    <string name="logintoRegisterAccount">New user? Register here</string>
     <string name="registerAccount">It is nice to see you join!</string>
+    <string name="nameHint">Name Surname</string>
+    <string name="phoneHint">Phone Number</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

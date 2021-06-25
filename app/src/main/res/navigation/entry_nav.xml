@@ -7,7 +7,27 @@
 
     <fragment
         android:id="@+id/entrySwipeFragment"
-        android:name="com.begumyolcu.ecommerceproject.EntrySwipeFragment"
+        android:name="com.begumyolcu.ecommerceproject.entry.EntrySwipeFragment"
         android:label="EntrySwipeFragment"
-        tools:layout="@layout/fragment_entry_swipe"/>
+        tools:layout="@layout/fragment_entry_swipe">
+        <action
+            android:id="@+id/entryToLoginAction"
+            app:destination="@id/entryLoginFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/entryLoginFragment"
+        android:name="com.begumyolcu.ecommerceproject.entry.EntryLoginFragment"
+        android:label="EntryLoginFragment"
+        tools:layout="@layout/fragment_entry_login">
+        <action
+            android:id="@+id/loginToRegisterAction"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@android:anim/fade_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.begumyolcu.ecommerceproject.entry.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register"/>
 </navigation>

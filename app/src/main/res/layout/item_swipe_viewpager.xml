@@ -8,6 +8,9 @@
         <variable
             name="itemS"
             type="com.begumyolcu.ecommerceproject.entity.SwipeItem" />
+        <variable
+            name="entrySwipeFragment"
+            type="com.begumyolcu.ecommerceproject.entry.EntrySwipeFragment" />
         <import type="android.view.View"/>
 
     </data>
@@ -34,7 +37,7 @@
             android:id="@+id/entrySwipeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/swipeEdgeDistance"
+            android:layout_marginTop="@dimen/largeEdgeDistance"
             android:fontFamily="@font/oswald"
             android:gravity="center"
             android:textColor="@color/textColor1"
@@ -90,13 +93,14 @@
             app:srcCompat="@drawable/arrow_right" />
 
         <Button
-            android:id="@+id/buttonRegister"
+            android:id="@+id/buttonToLogin"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/midDistance"
             android:fontFamily="@font/oswald"
-            android:text="Login or Register"
+            android:text="@string/loginButton"
+            android:onClick="@{() -> entrySwipeFragment.loginPressed(buttonToLogin)}"
             android:textColor="@color/textColor1"
             android:textSize="@dimen/smallTextDimen"
             android:visibility="@{itemS.swipeNumber == 3 ? View.VISIBLE  : View.INVISIBLE }"

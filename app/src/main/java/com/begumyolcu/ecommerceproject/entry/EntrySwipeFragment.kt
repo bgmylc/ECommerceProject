@@ -1,4 +1,4 @@
-package com.begumyolcu.ecommerceproject
+package com.begumyolcu.ecommerceproject.entry
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.adapters.SwipeViewPagerAdapter
 import com.begumyolcu.ecommerceproject.databinding.FragmentEntrySwipeBinding
 import com.begumyolcu.ecommerceproject.entity.SwipeItem
@@ -31,6 +33,11 @@ class EntrySwipeFragment : Fragment() {
         design.viewPagerAdapter = adapter
 
         return design.root
+    }
+
+    fun loginPressed(v: View){
+        Navigation.findNavController(v).navigate(R.id.entryToLoginAction)
+
     }
 
 }
