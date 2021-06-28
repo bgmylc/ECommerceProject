@@ -12,6 +12,16 @@
     <string name="registerAccount">It is nice to see you join!</string>
     <string name="nameHint">Name Surname</string>
     <string name="phoneHint">Phone Number</string>
+    <string name="emailEmptyError">Email cannot be empty!</string>
+    <string name="emailInvalidError">Email is invalid!</string>
+    <string name="passwordEmptyError">Password cannot be empty!</string>
+    <string name="passwordInvalidError">Password is invalid!</string>
+    <string name="loginSuccessMessage">Welcome, %s </string>
+    <string name="cartFragment">My Cart</string>
+    <string name="homePage">Home</string>
+    <string name="shopName">Shop Name</string>
+    <string name="profileFragment">My Profile</string>
+    <string name="campaignFragment">Campaigns</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

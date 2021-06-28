@@ -8,11 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <!--Custom app colors -->
-    <color name="primaryColor">#bc477b</color>
-    <color name="primaryDarkColor">#880e4f</color>
+    <color name="primaryColor">#4fb3bf</color>
+    <color name="primaryDarkColor">#00838f</color>
+    <color name="secondaryColor">#e0f7fa</color>
+    <color name="campaignCardColor">#e8eaf6</color>
+    <color name="campaignColor">#bc477b</color>
     <color name="textColor1">#FFFFFF</color>
     <color name="textColor2">#636363</color>
     <color name="swipeColor1">#006064</color>
     <color name="swipeColor2">#9c4dcc</color>
-    <color name="swipeColor3">#FF000000</color>
+    <color name="swipeColor3">#000000</color>
 </resources>

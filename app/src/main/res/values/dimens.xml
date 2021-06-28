@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Text -->
     <dimen name="titleDimen">36sp</dimen>
     <dimen name="generalTextDimen">22sp</dimen>
     <dimen name="smallTextDimen">14sp</dimen>
     <dimen name="buttonTextDimen">18sp</dimen>
-    <dimen name="buttonCornerDimen">20dp</dimen>
-    <dimen name="radioDimen">30dp</dimen>
+    <dimen name="toolbarTitleDimen">26sp</dimen>
     <dimen name="priceDimen">44sp</dimen>
+    <!-- Margin -->
     <dimen name="smallDistance">8dp</dimen>
+    <dimen name="cartSmallDistance">4dp</dimen>
     <dimen name="midDistance">16dp</dimen>
+    <dimen name="userCardMidDistance">20dp</dimen>
     <dimen name="edgeDistance">32dp</dimen>
     <dimen name="largeEdgeDistance">64dp</dimen>
+    <!-- View & General -->
+    <dimen name="buttonDimen">45dp</dimen>
+    <dimen name="campaignPercentDimen">65dp</dimen>
+    <dimen name="buttonCornerDimen">20dp</dimen>
+    <dimen name="radioDimen">30dp</dimen>
+    <dimen name="generalIconDimen">40dp</dimen>
+    <dimen name="smallIconDimen">30dp</dimen>
+    <dimen name="miniIconDimen">20dp</dimen>
+    <dimen name="midImageDimen">120dp</dimen>
     <dimen name="midDimen">128dp</dimen>
     <dimen name="largeDimen">256dp</dimen>
-    <dimen name="toolbarTitleDimen">26sp</dimen>
     <dimen name="generalImageDimen">180dp</dimen>
 </resources>

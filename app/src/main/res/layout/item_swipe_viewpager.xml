@@ -90,7 +90,7 @@
             android:layout_marginBottom="@dimen/midDistance"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/radioButtonSwipe3"
-            app:srcCompat="@drawable/arrow_right" />
+            app:srcCompat="@drawable/icon_arrow_right" />
 
         <Button
             android:id="@+id/buttonToLogin"

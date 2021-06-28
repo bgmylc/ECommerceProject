@@ -30,7 +30,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/register_item" />
+                app:srcCompat="@drawable/image_register" />
 
             <TextView
                 android:id="@+id/textView2"

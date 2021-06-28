@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ProductCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondaryColor"
+            app:cardCornerRadius="@dimen/buttonCornerDimen">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageViewProductCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edgeDistance"
+                    android:layout_marginTop="@dimen/largeEdgeDistance"
+                    android:layout_marginEnd="@dimen/edgeDistance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/textViewProductCardName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edgeDistance"
+                    android:layout_marginTop="@dimen/edgeDistance"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/buttonTextDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageViewProductCard"
+                    tools:text="Product Name" />
+
+                <TextView
+                    android:id="@+id/textViewProductCardPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/edgeDistance"
+                    android:layout_marginTop="@dimen/smallDistance"
+                    android:layout_marginBottom="@dimen/edgeDistance"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/toolbarTitleDimen"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewProductCardName"
+                    tools:text="Price $" />
+
+                <Button
+                    android:id="@+id/buttonProductCardInfo"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="@dimen/buttonDimen"
+                    android:layout_height="@dimen/buttonDimen"
+                    app:icon="@drawable/icon_info"
+                    app:iconGravity="textStart"
+                    app:iconSize="@dimen/smallIconDimen"
+                    app:iconTint="@color/textColor2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <Button
+                    android:id="@+id/buttonProductCardAddCart"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="@dimen/buttonDimen"
+                    android:layout_height="@dimen/buttonDimen"
+                    app:icon="@drawable/icon_add"
+                    app:iconGravity="textStart"
+                    app:iconSize="@dimen/smallIconDimen"
+                    app:iconTint="@color/textColor2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>

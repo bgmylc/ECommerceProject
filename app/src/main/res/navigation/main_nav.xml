@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/productFragment">
+
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.begumyolcu.ecommerceproject.mainapp.ProductFragment"
+        android:label="ProductFragment"
+        tools:layout="@layout/fragment_product"/>
+    <fragment
+        android:id="@+id/campaignFragment"
+        android:name="com.begumyolcu.ecommerceproject.mainapp.CampaignFragment"
+        android:label="CampaignFragment"
+        tools:layout="@layout/fragment_campaign"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.begumyolcu.ecommerceproject.mainapp.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.begumyolcu.ecommerceproject.mainapp.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
+</navigation>

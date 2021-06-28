@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentEntryLoginBinding

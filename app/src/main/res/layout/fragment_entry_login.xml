@@ -34,6 +34,8 @@
                 android:layout_marginTop="@dimen/largeEdgeDistance"
                 android:layout_marginEnd="@dimen/midDistance"
                 android:hint="@string/emailHint"
+                app:errorEnabled="true"
+
                 app:hintTextColor="@color/primaryDarkColor"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -81,7 +83,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/login_item" />
+                app:srcCompat="@drawable/image_login" />
 
             <TextView
                 android:id="@+id/textView"
