@@ -10,11 +10,13 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentEntryLoginBinding
+import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
 
 
 class EntryLoginFragment : Fragment() {
 
     private lateinit var design: FragmentEntryLoginBinding
+    private lateinit var viewModel: EntryLoginFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

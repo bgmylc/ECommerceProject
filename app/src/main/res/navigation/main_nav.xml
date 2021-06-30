@@ -9,7 +9,11 @@
         android:id="@+id/productFragment"
         android:name="com.begumyolcu.ecommerceproject.mainapp.ProductFragment"
         android:label="ProductFragment"
-        tools:layout="@layout/fragment_product"/>
+        tools:layout="@layout/fragment_product">
+        <action
+            android:id="@+id/productDetailAction"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/campaignFragment"
         android:name="com.begumyolcu.ecommerceproject.mainapp.CampaignFragment"
@@ -25,4 +29,9 @@
         android:name="com.begumyolcu.ecommerceproject.mainapp.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart"/>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.begumyolcu.ecommerceproject.mainapp.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" />
 </navigation>

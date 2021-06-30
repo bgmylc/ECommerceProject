@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="productDetailToolbarTitle"
+        type="String" />
+    <variable
+        name="productObject"
+        type="com.begumyolcu.ecommerceproject.entity.Product" />
+</data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".mainapp.ProductDetailFragment">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/productDetailColor"
+                android:src="@drawable/ic_launcher_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@color/productDetailColor" />
+
+            <TextView
+                android:id="@+id/textViewDetailDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/edgeDistance"
+                android:layout_marginTop="@dimen/smallDistance"
+                android:layout_marginEnd="@dimen/edgeDistance"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/buttonTextDimen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailName"
+                tools:text="Product Details Product Details Product Details" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:menu="@menu/toolbar_menu">
+
+                <TextView
+                    android:id="@+id/toolbarDetailTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:text="@{productDetailToolbarTitle}"
+                    android:textSize="@dimen/toolbarTitleDimen"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="18dp"
+                    tools:text="Product Name" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:id="@+id/textViewDetailName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/edgeDistance"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="@dimen/generalTextDimen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewDetailImage"
+                tools:text="Product Name" />
+
+            <TextView
+                android:id="@+id/textViewProductCardPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/edgeDistance"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbarTitleDimen"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDetailDescription"
+                tools:text="Price $" />
+
+            <ImageView
+                android:id="@+id/imageViewDetailImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/largeEdgeDistance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                tools:src="@tools:sample/avatars" />
+
+            <Button
+                android:id="@+id/buttonDetailCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/midDistance"
+                android:layout_marginTop="@dimen/largeEdgeDistance"
+                android:layout_marginEnd="@dimen/midDistance"
+                android:fontFamily="@font/poppins"
+                android:text="@string/addCart"
+                android:textSize="@dimen/buttonTextDimen"
+                app:icon="@drawable/icon_add"
+                app:iconGravity="textStart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewProductCardPrice2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </FrameLayout>
+
+</layout>

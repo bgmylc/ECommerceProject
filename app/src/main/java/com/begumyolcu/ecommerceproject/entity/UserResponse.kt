@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 class UserResponse(@SerializedName("kullanicilar")
                    @Expose
-                   var kullanici:User,
+                   var users:List<User>,
                    @SerializedName("success")
                    @Expose
                    var success:Int) {

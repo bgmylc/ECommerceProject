@@ -8,11 +8,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentProductBinding
+import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
+import com.begumyolcu.ecommerceproject.mainappviewmodel.ProductFragmentViewModel
 
 
 class ProductFragment : Fragment() {
 
     private lateinit var design : FragmentProductBinding
+    private lateinit var viewModel: ProductFragmentViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

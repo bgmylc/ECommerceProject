@@ -12,6 +12,7 @@
     <color name="primaryDarkColor">#005662</color>
     <color name="secondaryColor">#adc3c6</color>
     <color name="campaignCardColor">#b4bac1</color>
+    <color name="productDetailColor">#b4b8c1</color>
     <color name="campaignColor">#880e4f</color>
     <color name="textColor1">#FFFFFF</color>
     <color name="textColor2">#37474f</color>

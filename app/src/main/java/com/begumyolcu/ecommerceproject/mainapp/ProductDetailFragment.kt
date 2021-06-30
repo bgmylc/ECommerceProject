@@ -7,24 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.begumyolcu.ecommerceproject.R
-import com.begumyolcu.ecommerceproject.databinding.FragmentCampaignBinding
+import com.begumyolcu.ecommerceproject.databinding.FragmentEntrySwipeBinding
+import com.begumyolcu.ecommerceproject.databinding.FragmentProductDetailBinding
 import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
-import com.begumyolcu.ecommerceproject.mainappviewmodel.CampaignFragmentViewModel
+import com.begumyolcu.ecommerceproject.mainappviewmodel.ProductDetailFragmentViewModel
 
 
-class CampaignFragment : Fragment() {
-    private lateinit var design : FragmentCampaignBinding
-    private lateinit var viewModel: CampaignFragmentViewModel
+class ProductDetailFragment : Fragment() {
+    private lateinit var design: FragmentProductDetailBinding
+    private lateinit var viewModel: ProductDetailFragmentViewModel
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        design = DataBindingUtil.inflate(inflater, R.layout.fragment_campaign, container, false)
+        design = DataBindingUtil.inflate(inflater, R.layout.fragment_product_detail, container, false)
         return design.root
     }
-
 
 }

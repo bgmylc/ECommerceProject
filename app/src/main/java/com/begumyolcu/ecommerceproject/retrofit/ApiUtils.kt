@@ -1,6 +1,6 @@
 package com.begumyolcu.ecommerceproject.retrofit
 
-import com.example.kisileruygulamasi.retrofit.UserDaoInterface
+import com.example.kisileruygulamasi.retrofit.UsersDaoInterface
 
 class ApiUtils {
 
@@ -8,8 +8,11 @@ class ApiUtils {
 
         val BASE_URL = "http://upschool.canerture.com/"
 
-        fun getKisilerDaoInterface(): UserDaoInterface {
-            return RetrofitClient.getClient(BASE_URL).create(UserDaoInterface::class.java)
+        fun getUsersDaoInterface(): UsersDaoInterface {
+            return RetrofitClient.getClient(BASE_URL).create(UsersDaoInterface::class.java)
+        }
+        fun getProductsDaoInterface(): ProductsDaoInterface {
+            return RetrofitClient.getClient(BASE_URL).create(ProductsDaoInterface::class.java)
         }
     }
 }

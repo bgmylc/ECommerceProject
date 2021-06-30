@@ -1,19 +1,21 @@
 package com.begumyolcu.ecommerceproject.entryviewmodel
 
+import android.content.res.Resources
 import android.util.Patterns
-import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.databinding.ObservableInt
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.begumyolcu.ecommerceproject.Event
 import com.begumyolcu.ecommerceproject.R
-import com.begumyolcu.ecommerceproject.entity.User
 import com.begumyolcu.ecommerceproject.repo.UserDaoRepository
-import kotlinx.coroutines.withContext
 
 class EntryLoginFragmentViewModel : ViewModel() {
 
     private val udaor = UserDaoRepository()
+    private val statusMessage = MutableLiveData<Event<String>>()
+    val message : LiveData<Event<String>>
+        get() = statusMessage
 
     fun validate(email: String, password: String) : Array<Unit> {
 
@@ -24,8 +26,17 @@ class EntryLoginFragmentViewModel : ViewModel() {
         val isPasswordValid = validatePassword(password)
 
         if (isEmailValid == null && isPasswordValid == null){
-            udaor.LoginUser()
-            return arrayOf(emailError.set(0), passwordError.set(0)) //TODO: Burayı da loginCheck'e göre düzelt
+            udaor.loginUser(email, password)
+            val user = udaor.getUser()
+            if (user != null){
+                val text = Resources.getSystem().getString(R.string.loginSuccessMessage, user.value!!.name_surname)
+                statusMessage.value = Event(text)
+            }
+            else{
+                val text = Resources.getSystem().getString(R.string.loginErrorMessage)
+                statusMessage.value = Event(text)
+            }
+            return arrayOf(emailError.set(0), passwordError.set(0)) //TODO: bunu ne yapsam?
         }
         else{
             return arrayOf(emailError.set(isEmailValid!!), passwordError.set(isPasswordValid!!))
