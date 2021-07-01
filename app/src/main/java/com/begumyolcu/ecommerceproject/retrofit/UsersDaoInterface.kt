@@ -11,7 +11,9 @@ import retrofit2.http.POST
 
 interface UsersDaoInterface {
     @POST("giris_yap.php")
+    @FormUrlEncoded
     fun loginToApp(@Field("mail_adres") mail_address: String, @Field("sifre") password: String ) : Call<UserResponse>
+
 
     @POST("uye_ol.php")
     @FormUrlEncoded

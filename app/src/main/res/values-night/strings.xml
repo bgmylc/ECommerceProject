@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">ECommerceProject</string>
     <!-- Entry Activity-->
@@ -38,6 +39,4 @@
     <string name="cartTotal">Total:</string>
     <string name="shippingPrice">3.99$</string>
     <string name="cartCheckout">Checkout</string>
-
-
 </resources>

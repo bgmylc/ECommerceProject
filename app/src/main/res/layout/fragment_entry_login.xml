@@ -111,6 +111,7 @@
                 android:fontFamily="@font/oswald"
                 android:text="@string/loginButton"
                 android:textSize="@dimen/smallTextDimen"
+                android:onClick="@{() -> entryLoginFragment.loginPressed(editTextLoginEmail.getText().toString(), editTextLoginPassword.getText().toString() )}"
                 app:cornerRadius="@dimen/buttonCornerDimen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

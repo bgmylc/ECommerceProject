@@ -8,12 +8,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.begumyolcu.ecommerceproject.Event
 import com.begumyolcu.ecommerceproject.R
+import com.begumyolcu.ecommerceproject.entity.User
 import com.begumyolcu.ecommerceproject.repo.UserDaoRepository
 
 class EntryLoginFragmentViewModel : ViewModel() {
 
     private val udaor = UserDaoRepository()
     private val statusMessage = MutableLiveData<Event<String>>()
+    var loggedUser:MutableLiveData<User> = MutableLiveData()
     val message : LiveData<Event<String>>
         get() = statusMessage
 
@@ -30,7 +32,8 @@ class EntryLoginFragmentViewModel : ViewModel() {
             val user = udaor.getUser()
             if (user != null){
                 val text = Resources.getSystem().getString(R.string.loginSuccessMessage, user.value!!.name_surname)
-                statusMessage.value = Event(text)
+                loggedUser = user
+                statusMessage.value = Event(text) //TODO: buna göre toast çıkaracağız
             }
             else{
                 val text = Resources.getSystem().getString(R.string.loginErrorMessage)
@@ -43,6 +46,7 @@ class EntryLoginFragmentViewModel : ViewModel() {
         }
 
     }
+
 
     fun validateEmail(email: String): Int? {
         if (email.isEmpty()){

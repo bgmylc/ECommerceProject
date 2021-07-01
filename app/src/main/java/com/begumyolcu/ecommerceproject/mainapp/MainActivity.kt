@@ -9,9 +9,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TODO: Detay sayfayı unuttum
-        //TODO: Cartın altı için bi card yapsan
-        //TODO: Sonra da checkout buttonu ekle
+        //TODO: Toolbar sepet ikonu ile sepete gitmeler yapılacak
+        //TODO: Sepete eklenince toast çıkarılacak
 
     }
 }
