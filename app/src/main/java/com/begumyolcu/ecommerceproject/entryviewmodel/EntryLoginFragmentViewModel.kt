@@ -29,15 +29,13 @@ class EntryLoginFragmentViewModel : ViewModel() {
 
         if (isEmailValid == null && isPasswordValid == null){
             udaor.loginUser(email, password)
-            val user = udaor.getUser()
-            if (user != null){
-                val text = Resources.getSystem().getString(R.string.loginSuccessMessage, user.value!!.name_surname)
-                loggedUser = user
-                statusMessage.value = Event(text) //TODO: buna göre toast çıkaracağız
-            }
-            else{
-                val text = Resources.getSystem().getString(R.string.loginErrorMessage)
-                statusMessage.value = Event(text)
+            var userList = udaor.userList.value
+            if (userList != null) {
+                for(i in userList){
+                    if (i.login_value == 1){
+                        loggedUser.value = i
+                    }
+                }
             }
             return arrayOf(emailError.set(0), passwordError.set(0)) //TODO: bunu ne yapsam?
         }

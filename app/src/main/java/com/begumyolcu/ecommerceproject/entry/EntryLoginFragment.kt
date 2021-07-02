@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentEntryLoginBinding
+import com.begumyolcu.ecommerceproject.entity.User
 import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
 import com.begumyolcu.ecommerceproject.mainapp.MainActivity
 
@@ -24,6 +25,7 @@ class EntryLoginFragment : Fragment() {
 
     private lateinit var design: FragmentEntryLoginBinding
     private lateinit var viewModel: EntryLoginFragmentViewModel
+    lateinit var logUser : User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +37,8 @@ class EntryLoginFragment : Fragment() {
         design.lifecycleOwner = this
 
         viewModel.loggedUser.observe(viewLifecycleOwner, { loggedUser ->
-            /*viewModel.message.observe(viewLifecycleOwner, Observer {
-                it.getContentIfNotHandled()?.let {
-                    if (it == Resources.getSystem().getString(R.string.loginSuccessMessage, loggedUser.name_surname)){
-                        Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
-                    }
-                }
-            })*/
             if (loggedUser != null){
+                logUser = loggedUser
                 val newIntent = Intent(activity, MainActivity::class.java)
                 newIntent.putExtra("user", loggedUser)
                 startActivity(newIntent)

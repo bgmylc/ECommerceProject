@@ -13,19 +13,30 @@
         <action
             android:id="@+id/productDetailAction"
             app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/homeToCart"
+            app:destination="@id/cartFragmentAction" />
     </fragment>
     <fragment
         android:id="@+id/campaignFragment"
         android:name="com.begumyolcu.ecommerceproject.mainapp.CampaignFragment"
         android:label="CampaignFragment"
-        tools:layout="@layout/fragment_campaign"/>
+        tools:layout="@layout/fragment_campaign">
+        <action
+            android:id="@+id/campaignToCart"
+            app:destination="@id/cartFragmentAction" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.begumyolcu.ecommerceproject.mainapp.ProfileFragment"
         android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/profileToCart"
+            app:destination="@id/cartFragmentAction" />
+    </fragment>
     <fragment
-        android:id="@+id/cartFragment"
+        android:id="@+id/cartFragmentAction"
         android:name="com.begumyolcu.ecommerceproject.mainapp.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart"/>
@@ -33,5 +44,9 @@
         android:id="@+id/productDetailFragment"
         android:name="com.begumyolcu.ecommerceproject.mainapp.ProductDetailFragment"
         android:label="fragment_product_detail"
-        tools:layout="@layout/fragment_product_detail" />
+        tools:layout="@layout/fragment_product_detail" >
+        <action
+            android:id="@+id/productToCart"
+            app:destination="@id/cartFragmentAction" />
+    </fragment>
 </navigation>

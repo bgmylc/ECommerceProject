@@ -10,10 +10,10 @@ import com.begumyolcu.ecommerceproject.entity.ProfileItem
 class ProfileItemAdapter (var mContext : Context, var profileItemList : ArrayList<ProfileItem>) : RecyclerView.Adapter<ProfileItemAdapter.CardDesignHolder>() {
 
     inner class CardDesignHolder(cardDesignProfileSecondBinding: CardDesignProfileSecondBinding) : RecyclerView.ViewHolder(cardDesignProfileSecondBinding.root){
-        var design: CardDesignProfileSecondBinding
+        var binding: CardDesignProfileSecondBinding
 
         init{
-            this.design = cardDesignProfileSecondBinding
+            this.binding = cardDesignProfileSecondBinding
         }
     }
 
@@ -26,8 +26,8 @@ class ProfileItemAdapter (var mContext : Context, var profileItemList : ArrayLis
     override fun onBindViewHolder(holder: CardDesignHolder, position: Int) {
         val profileItem = profileItemList.get(position)
 
-        holder.design.textViewUserActionName.text = profileItem.item_name
-        holder.design.imageViewUserAction.setImageResource(mContext.resources.getIdentifier(profileItem.profile_item_logo, "drawable", mContext.packageName))
+        holder.binding.textViewUserActionName.text = profileItem.item_name
+        holder.binding.imageViewUserAction.setImageResource(mContext.resources.getIdentifier(profileItem.profile_item_logo, "drawable", mContext.packageName))
     }
 
     override fun getItemCount(): Int {

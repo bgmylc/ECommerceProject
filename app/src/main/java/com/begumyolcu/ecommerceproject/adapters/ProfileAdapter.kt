@@ -6,13 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.begumyolcu.ecommerceproject.databinding.CardDesignProfileFirstBinding
 import com.begumyolcu.ecommerceproject.entity.User
+import com.begumyolcu.ecommerceproject.mainappviewmodel.ProfileFragmentViewModel
 
-class ProfileAdapter(var mContext : Context, var user : User) : RecyclerView.Adapter<ProfileAdapter.CardDesignHolder>() {
+class ProfileAdapter(var mContext : Context, var user : User, var viewModel: ProfileFragmentViewModel) : RecyclerView.Adapter<ProfileAdapter.CardDesignHolder>() {
 
     inner class CardDesignHolder(profileFirstBinding: CardDesignProfileFirstBinding) : RecyclerView.ViewHolder(profileFirstBinding.root){
-        var design: CardDesignProfileFirstBinding
+        var binding: CardDesignProfileFirstBinding
         init{
-            this.design = profileFirstBinding
+            this.binding = profileFirstBinding
         }
     }
 
@@ -23,7 +24,7 @@ class ProfileAdapter(var mContext : Context, var user : User) : RecyclerView.Ada
     }
 
     override fun onBindViewHolder(holder: CardDesignHolder, position: Int) {
-        holder.design.userObject = user
+        holder.binding.user = user
     }
 
     override fun getItemCount(): Int {

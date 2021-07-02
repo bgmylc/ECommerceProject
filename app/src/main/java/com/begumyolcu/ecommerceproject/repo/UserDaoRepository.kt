@@ -16,33 +16,22 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class UserDaoRepository {
-    private val user: MutableLiveData<User>
+    var userList: MutableLiveData<List<User>>
     private val userDaoInterface : UsersDaoInterface
 
     init{
         userDaoInterface = ApiUtils.getUsersDaoInterface()
-        user = MutableLiveData()
-    }
-
-    fun getUser() : MutableLiveData<User>{
-        return user
+        userList = MutableLiveData()
     }
 
     fun loginUser(mail_address: String, password: String) {
         userDaoInterface.loginToApp(mail_address, password).enqueue(object: Callback<UserResponse>{
-            override fun onResponse(call: Call<UserResponse>?, response: Response<UserResponse>?) {
-                val list = response?.body()?.users
-                for(i in list!!){
-                    val user_test = i
-                    if (user_test.login_value == 1){
-                        user.value = user_test
-
-                    }
-                    else user.value = null
-                }
-
+            override fun onResponse(call: Call<UserResponse>?, response: Response<UserResponse>) {
+                userList.value = response.body().users
             }
-            override fun onFailure(call: Call<UserResponse>?, t: Throwable?) {}
+            override fun onFailure(call: Call<UserResponse>?, t: Throwable?) {
+                println(t?.localizedMessage.toString())
+            }
 
         })
     }
