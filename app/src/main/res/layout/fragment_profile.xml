@@ -10,6 +10,9 @@
     <variable
         name="rvTwoAdapter"
         type="com.begumyolcu.ecommerceproject.adapters.ProfileItemAdapter" />
+    <variable
+        name="toolbarTitleEmpty"
+        type="String" />
 </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/cartSmallDistance"
             android:adapter="@{rvOneAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/edgeDistance"
             android:adapter="@{rvTwoAdapter}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvUserOne" />
@@ -45,6 +50,7 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
+            app:title="@{toolbarTitleEmpty}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

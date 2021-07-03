@@ -8,7 +8,7 @@ import com.begumyolcu.ecommerceproject.databinding.CardDesignProfileFirstBinding
 import com.begumyolcu.ecommerceproject.entity.User
 import com.begumyolcu.ecommerceproject.mainappviewmodel.ProfileFragmentViewModel
 
-class ProfileAdapter(var mContext : Context, var user : User, var viewModel: ProfileFragmentViewModel) : RecyclerView.Adapter<ProfileAdapter.CardDesignHolder>() {
+class ProfileAdapter(var mContext : Context, var user_name: String, var user_mail : String, var user_phone : String, var viewModel: ProfileFragmentViewModel) : RecyclerView.Adapter<ProfileAdapter.CardDesignHolder>() {
 
     inner class CardDesignHolder(profileFirstBinding: CardDesignProfileFirstBinding) : RecyclerView.ViewHolder(profileFirstBinding.root){
         var binding: CardDesignProfileFirstBinding
@@ -24,7 +24,10 @@ class ProfileAdapter(var mContext : Context, var user : User, var viewModel: Pro
     }
 
     override fun onBindViewHolder(holder: CardDesignHolder, position: Int) {
-        holder.binding.user = user
+        holder.binding.userName = user_name
+        holder.binding.userMail = user_mail
+        holder.binding.userPhone = user_phone
+
     }
 
     override fun getItemCount(): Int {

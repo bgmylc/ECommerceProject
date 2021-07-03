@@ -29,5 +29,9 @@
         android:id="@+id/registerFragment"
         android:name="com.begumyolcu.ecommerceproject.entry.RegisterFragment"
         android:label="RegisterFragment"
-        tools:layout="@layout/fragment_register"/>
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/actionRegisterToLogin"
+            app:destination="@id/entryLoginFragment" />
+    </fragment>
 </navigation>

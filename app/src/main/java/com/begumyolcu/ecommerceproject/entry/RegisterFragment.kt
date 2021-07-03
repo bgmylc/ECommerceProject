@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentRegisterBinding
 import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
@@ -37,5 +38,6 @@ class RegisterFragment : Fragment() {
 
     fun onRegisterPressed(mail_address: String, password: String, name_surname: String, phone : String){
         viewModel.register(mail_address, password, name_surname, phone)
+        Navigation.findNavController(requireView()).navigate(R.id.actionRegisterToLogin)
     }
 }

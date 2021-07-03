@@ -1,5 +1,6 @@
 package com.begumyolcu.ecommerceproject.repo
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.begumyolcu.ecommerceproject.entity.CRUDResponse
 import com.begumyolcu.ecommerceproject.entity.Product
@@ -9,7 +10,6 @@ import com.begumyolcu.ecommerceproject.retrofit.ProductsDaoInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.http.Field
 
 class ProductsDaoRepository {
     private val productsList: MutableLiveData<List<Product>>
@@ -26,15 +26,9 @@ class ProductsDaoRepository {
 
     fun getProducts(seller_name : String) {
         productsDaoInterface.getProducts(seller_name).enqueue(object: Callback<ProductResponse> {
-            override fun onResponse(call: Call<ProductResponse>?, response: Response<ProductResponse>?) {
-                val allProducts = response?.body()?.products
-                val productListTemp = arrayListOf<Product>()
-                for (i in allProducts!!){
-                    if (i.seller_name == seller_name){
-                        productListTemp.add(i)
-                    }
-                }
-                productsList.value = productListTemp
+            override fun onResponse(call: Call<ProductResponse>?, response: Response<ProductResponse>) {
+                val allProducts = response.body().products
+                productsList.value = allProducts
             }
             override fun onFailure(call: Call<ProductResponse>?, t: Throwable?) {}
         })

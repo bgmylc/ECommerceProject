@@ -48,5 +48,8 @@
         <action
             android:id="@+id/productToCart"
             app:destination="@id/cartFragmentAction" />
+        <argument
+            android:name="productObject"
+            app:argType="com.begumyolcu.ecommerceproject.entity.Product" />
     </fragment>
 </navigation>

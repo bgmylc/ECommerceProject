@@ -1,16 +1,12 @@
 package com.begumyolcu.ecommerceproject.repo
 
-import android.content.Context
-import android.content.res.Resources
-import android.widget.Toast
+
 import androidx.lifecycle.MutableLiveData
-import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.entity.CRUDResponse
 import com.begumyolcu.ecommerceproject.entity.User
 import com.begumyolcu.ecommerceproject.entity.UserResponse
 import com.begumyolcu.ecommerceproject.retrofit.ApiUtils
 import com.example.kisileruygulamasi.retrofit.UsersDaoInterface
-import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

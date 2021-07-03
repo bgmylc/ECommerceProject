@@ -1,17 +1,15 @@
 package com.begumyolcu.ecommerceproject.mainapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.entity.User
-import com.begumyolcu.ecommerceproject.mainappviewmodel.ProfileFragmentViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private val viewModel: ProfileFragmentViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,11 +20,19 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomNav,navHostFragment.navController)
 
         val loggedUser = intent.getSerializableExtra("user") as User
-        viewModel.getUser(loggedUser)
 
-        //TODO: Toolbar sepet ikonu ile sepete gitmeler yapılacak
-        //TODO: Sepete eklenince toast çıkarılacak
+        val pref = applicationContext.getSharedPreferences("MyPref", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = pref.edit()
+
+        val userPreference: UserPreference = UserPreference.getInstance(applicationContext)!!
+        userPreference.saveData("user_name", loggedUser.name_surname)
+        userPreference.saveData("user_email", loggedUser.mail_address)
+        userPreference.saveData("user_phone", loggedUser.phone)
 
 
+
+
+
+        editor.apply()
     }
 }

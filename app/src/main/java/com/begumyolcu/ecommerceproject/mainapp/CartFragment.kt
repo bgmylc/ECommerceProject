@@ -10,7 +10,7 @@ import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentCartBinding
 import com.begumyolcu.ecommerceproject.mainappviewmodel.CartFragmentViewModel
 
-
+//TODO: Sepete eklenince eklendi diye Toast çıkar
 class CartFragment : Fragment() {
     private lateinit var design: FragmentCartBinding
     private lateinit var viewModel: CartFragmentViewModel

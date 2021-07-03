@@ -66,10 +66,7 @@
                 android:fontFamily="@font/oswald"
                 android:text="@string/registerButton"
                 android:textSize="@dimen/smallTextDimen"
-                android:onClick="@{() -> registerFragment.onRegisterPressed(editTextRegisterEmail.getText().toString(),
-                editTextRegisterPassword.getText().toString(),
-                editTextRegisterName.getText().toString(),
-                editTextRegisterPhone.getText().toString())}"
+                android:onClick="@{() -> registerFragment.onRegisterPressed(editTextRegisterEmail.getText().toString(),editTextRegisterPassword.getText().toString(),editTextRegisterName.getText().toString(),editTextRegisterPhone.getText().toString())}"
                 app:cornerRadius="@dimen/buttonCornerDimen"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -155,12 +152,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout7">
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextRegisterPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

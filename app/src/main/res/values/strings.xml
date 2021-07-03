@@ -24,7 +24,7 @@
     <!-- Main Activity-->
     <string name="cartFragment">My Cart</string>
     <string name="homePage">Home</string>
-    <string name="shopName">Shop Name</string>
+    <string name="shopName">SFF Guild</string>
     <string name="profileFragment">My Profile</string>
     <string name="campaignFragment">Campaigns</string>
     <string name="addCart">Add to Cart</string>
@@ -38,6 +38,6 @@
     <string name="cartTotal">Total:</string>
     <string name="shippingPrice">3.99$</string>
     <string name="cartCheckout">Checkout</string>
-
+    <string name="dollars">\$</string>
 
 </resources>

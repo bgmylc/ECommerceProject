@@ -126,6 +126,7 @@
                 android:fontFamily="@font/oswald"
                 android:onClick="@{() -> entryLoginFragment.registerPressed(buttonToRegister)}"
                 android:text="@string/logintoRegisterAccount"
+                android:textColor="@color/textColor2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />

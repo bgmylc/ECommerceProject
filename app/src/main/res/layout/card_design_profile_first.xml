@@ -5,8 +5,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 <data>
     <variable
-        name="user"
-        type="com.begumyolcu.ecommerceproject.entity.User" />
+        name="userName"
+        type="String" />
+    <variable
+        name="userMail"
+        type="String" />
+    <variable
+        name="userPhone"
+        type="String" />
 </data>
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,7 +43,7 @@
                     android:fontFamily="@font/poppins"
                     android:textColor="#9A9696"
                     android:textSize="@dimen/smallTextDimen"
-                    android:text="@{user.phone}"
+                    android:text="@{userPhone}"
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
                     app:layout_constraintTop_toBottomOf="@+id/textViewUserEmail"
                     tools:text="+90 (555) 555-5577" />
@@ -72,7 +78,7 @@
                     android:layout_marginTop="@dimen/userCardMidDistance"
                     android:fontFamily="@font/poppins"
                     android:textColor="#9A9696"
-                    android:text="@{user.mail_address}"
+                    android:text="@{userMail}"
                     android:textSize="@dimen/smallTextDimen"
                     app:layout_constraintStart_toEndOf="@+id/imageView2"
                     app:layout_constraintTop_toBottomOf="@+id/imageViewUserProfile"
@@ -88,7 +94,7 @@
                     android:tint="@color/primaryColor"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/logo_user" />
+                    app:srcCompat="@drawable/logo_user" />
 
                 <TextView
                     android:id="@+id/textViewUserName"
@@ -98,7 +104,7 @@
                     android:layout_marginTop="36dp"
                     android:fontFamily="@font/poppins"
                     android:textColor="#020202"
-                    android:text="@{user.name_surname}"
+                    android:text="@{userName}"
                     android:textSize="@dimen/generalTextDimen"
                     app:layout_constraintStart_toEndOf="@+id/imageViewUserProfile"
                     app:layout_constraintTop_toTopOf="parent"
