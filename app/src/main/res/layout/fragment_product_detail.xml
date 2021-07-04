@@ -11,31 +11,27 @@
     <variable
         name="productObject"
         type="com.begumyolcu.ecommerceproject.entity.Product" />
+    <variable
+        name="productDetailFragment"
+        type="com.begumyolcu.ecommerceproject.mainapp.ProductDetailFragment" />
 </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            app:srcCompat="@drawable/background_detail" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".mainapp.ProductDetailFragment">
 
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@color/productDetailColor"
-                android:src="@drawable/ic_launcher_background"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
-                app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@color/productDetailColor" />
 
             <TextView
                 android:id="@+id/textViewDetailDescription"
@@ -46,8 +42,9 @@
                 android:layout_marginEnd="@dimen/edgeDistance"
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
+                android:text="@{productObject.product_description}"
                 android:textColor="@color/black"
-                android:textSize="@dimen/buttonTextDimen"
+                android:textSize="@dimen/smallTextDimen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textViewDetailName"
@@ -85,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/edgeDistance"
                 android:fontFamily="@font/poppins"
+                android:text="@{productObject.product_name}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/generalTextDimen"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -98,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/edgeDistance"
                 android:fontFamily="@font/poppins"
+                android:text="@{@string/dollars+ ' ' +productObject.product_price}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/toolbarTitleDimen"
                 android:textStyle="bold"
@@ -108,8 +107,8 @@
 
             <ImageView
                 android:id="@+id/imageViewDetailImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/largeImageDimen"
+                android:layout_height="@dimen/largeImageDimen"
                 android:layout_marginTop="@dimen/largeEdgeDistance"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,17 +120,18 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/midDistance"
-                android:layout_marginTop="@dimen/largeEdgeDistance"
                 android:layout_marginEnd="@dimen/midDistance"
+                android:layout_marginBottom="@dimen/edgeDistance"
                 android:fontFamily="@font/poppins"
+                android:onClick="@{() -> productDetailFragment.onCartPressed(productObject)}"
                 android:text="@string/addCart"
                 android:textSize="@dimen/buttonTextDimen"
                 app:icon="@drawable/icon_add"
                 app:iconGravity="textStart"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textViewProductCardPrice2" />
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

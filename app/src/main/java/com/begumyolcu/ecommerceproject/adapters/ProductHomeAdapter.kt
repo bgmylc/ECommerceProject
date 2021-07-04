@@ -3,10 +3,12 @@ package com.begumyolcu.ecommerceproject.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.begumyolcu.ecommerceproject.databinding.CardDesignProductBinding
 import com.begumyolcu.ecommerceproject.entity.Product
 import com.begumyolcu.ecommerceproject.mainapp.ProductFragment
+import com.begumyolcu.ecommerceproject.mainapp.ProductFragmentDirections
 import com.begumyolcu.ecommerceproject.mainappviewmodel.ProductFragmentViewModel
 import com.squareup.picasso.Picasso
 
@@ -33,6 +35,18 @@ class ProductHomeAdapter(var mContext : Context, var productList : List<Product>
 
         holder.binding.productFragment = fragment
         holder.binding.product = product
+
+        holder.binding.buttonProductCardAddCart.setOnClickListener {
+            viewModel.cartStatus(product.id, product.cart_status)
+        }
+        holder.binding.ProductCardView.setOnClickListener {
+            val actionToDetail = ProductFragmentDirections.productDetailAction(product)
+            Navigation.findNavController(it).navigate(actionToDetail)
+        }
+        holder.binding.buttonProductCardInfo.setOnClickListener {
+            val actionToDetail = ProductFragmentDirections.productDetailAction(product)
+            Navigation.findNavController(it).navigate(actionToDetail)
+        }
     }
 
     override fun getItemCount(): Int {

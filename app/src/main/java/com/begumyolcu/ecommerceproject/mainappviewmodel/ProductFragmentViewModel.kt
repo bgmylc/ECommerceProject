@@ -23,6 +23,13 @@ class ProductFragmentViewModel : ViewModel() {
         pdaor.getProducts(seller_name)
     }
 
+    fun cartStatus(id : Int, cartStatus : Int){
+        pdaor.cartStatusChange(id, cartStatus)
+    }
+
+    fun campaign(id: Int, campaignStat : Int){
+        pdaor.changeCampaignStatus(id, campaignStat)
+    }
 
 
 }

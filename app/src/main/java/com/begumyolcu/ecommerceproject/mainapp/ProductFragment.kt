@@ -29,8 +29,11 @@ class ProductFragment : Fragment() {
 
         viewModel.productsList.observe(viewLifecycleOwner, { productsList ->
             adapter = ProductHomeAdapter(requireContext(), productsList, viewModel)
+            viewModel.campaign(productsList[3].id, productsList[3].product_has_campaign)
+            viewModel.campaign(productsList[2].id, productsList[2].product_has_campaign)
             design.adapter = adapter
         })
+
 
         return design.root
     }
@@ -57,11 +60,5 @@ class ProductFragment : Fragment() {
         }
 
     }
-
-    fun onInfoPressed(product: Product){
-        val actionToDetail = ProductFragmentDirections.productDetailAction(product)
-        Navigation.findNavController(requireView()).navigate(actionToDetail)
-    }
-
 
 }

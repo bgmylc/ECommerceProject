@@ -9,12 +9,14 @@
     <dimen name="priceDimen">44sp</dimen>
     <!-- Margin -->
     <dimen name="smallDistance">8dp</dimen>
+    <dimen name="cardSmallDistance">4dp</dimen>
     <dimen name="cartSmallDistance">4dp</dimen>
     <dimen name="midDistance">16dp</dimen>
     <dimen name="userCardMidDistance">20dp</dimen>
     <dimen name="edgeDistance">32dp</dimen>
     <dimen name="largeEdgeDistance">64dp</dimen>
     <!-- View & General -->
+    <dimen name="cardProductHeight">375dp</dimen>
     <dimen name="buttonDimen">45dp</dimen>
     <dimen name="campaignPercentDimen">65dp</dimen>
     <dimen name="buttonCornerDimen">20dp</dimen>
@@ -22,6 +24,8 @@
     <dimen name="generalIconDimen">40dp</dimen>
     <dimen name="smallIconDimen">30dp</dimen>
     <dimen name="miniIconDimen">20dp</dimen>
+    <dimen name="largeImageDimen">200dp</dimen>
+    <dimen name="imageDimen">150dp</dimen>
     <dimen name="midImageDimen">120dp</dimen>
     <dimen name="midDimen">128dp</dimen>
     <dimen name="largeDimen">256dp</dimen>

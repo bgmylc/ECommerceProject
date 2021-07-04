@@ -4,6 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="adapterOne"
+            type="com.begumyolcu.ecommerceproject.adapters.CartAdapter" />
+        <variable
+            name="adapterTwo"
+            type="com.begumyolcu.ecommerceproject.adapters.CartSecondAdapter" />
+    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,6 +22,8 @@
             android:id="@+id/rvCartTop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:adapter="@{adapterOne}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarCart" />
@@ -47,6 +57,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/cartSmallDistance"
+            android:adapter="@{adapterTwo}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/buttonCartCheckout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

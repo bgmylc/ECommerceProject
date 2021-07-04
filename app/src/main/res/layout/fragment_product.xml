@@ -21,12 +21,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adapter="@{adapter}"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         android:orientation="vertical"
-        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarHome"
+        app:spanCount="2" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarHome"

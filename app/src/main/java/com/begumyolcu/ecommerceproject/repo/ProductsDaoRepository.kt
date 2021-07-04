@@ -14,10 +14,14 @@ import retrofit2.Response
 class ProductsDaoRepository {
     private val productsList: MutableLiveData<List<Product>>
     private val productsDaoInterface : ProductsDaoInterface
+    private val campaignList : MutableLiveData<List<Product>>
+    private val cartList : MutableLiveData<List<Product>>
 
     init{
         productsDaoInterface = ApiUtils.getProductsDaoInterface()
         productsList = MutableLiveData()
+        campaignList = MutableLiveData()
+        cartList = MutableLiveData()
     }
 
     fun bringProducts() : MutableLiveData<List<Product>> {
@@ -56,5 +60,45 @@ class ProductsDaoRepository {
             override fun onFailure(call: Call<CRUDResponse>?, t: Throwable?) {}
 
         })
+    }
+
+    fun getCampaignProducts(seller_name: String){
+        productsDaoInterface.getProducts(seller_name).enqueue(object : Callback<ProductResponse> {
+            override fun onResponse(call: Call<ProductResponse>?, response: Response<ProductResponse>) {
+                val products = response.body().products
+                val temp = arrayListOf<Product>()
+                for(i in products){
+                    if (i.product_has_campaign == 1) {
+                        temp.add(i)
+                    }
+                }
+                campaignList.value = temp
+            }
+            override fun onFailure(call: Call<ProductResponse>?, t: Throwable?) {}
+        })
+    }
+
+    fun bringCampaign() : MutableLiveData<List<Product>>  {
+        return campaignList
+    }
+
+    fun getCartProducts(seller_name: String){
+        productsDaoInterface.getProducts(seller_name).enqueue(object : Callback<ProductResponse> {
+            override fun onResponse(call: Call<ProductResponse>?, response: Response<ProductResponse>) {
+                val products = response.body().products
+                val temp = arrayListOf<Product>()
+                for(i in products){
+                    if (i.cart_status == 1) {
+                        temp.add(i)
+                    }
+                }
+                cartList.value = temp
+            }
+            override fun onFailure(call: Call<ProductResponse>?, t: Throwable?) {}
+        })
+    }
+
+    fun bringCart() : MutableLiveData<List<Product>>  {
+        return cartList
     }
 }

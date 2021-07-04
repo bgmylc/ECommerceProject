@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.begumyolcu.ecommerceproject.R
+import com.begumyolcu.ecommerceproject.adapters.CampaignAdapter
 import com.begumyolcu.ecommerceproject.databinding.FragmentCampaignBinding
 import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
 import com.begumyolcu.ecommerceproject.mainappviewmodel.CampaignFragmentViewModel
@@ -16,7 +17,7 @@ import com.begumyolcu.ecommerceproject.mainappviewmodel.ProfileFragmentViewModel
 class CampaignFragment : Fragment() {
     private lateinit var design : FragmentCampaignBinding
     private lateinit var viewModel: CampaignFragmentViewModel
-
+    private lateinit var adapter : CampaignAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,6 +25,13 @@ class CampaignFragment : Fragment() {
     ): View? {
 
         design = DataBindingUtil.inflate(inflater, R.layout.fragment_campaign, container, false)
+
+        viewModel.campaignList.observe(viewLifecycleOwner, { campaigns ->
+            adapter = CampaignAdapter(requireContext(), campaigns, viewModel)
+            design.adapter = adapter
+        })
+
+
         return design.root
     }
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -42,8 +42,6 @@ class ProfileFragment : Fragment() {
         val user_mail: String = userPreference?.getData("user_email").toString()
         val user_phone: String = userPreference?.getData("user_phone").toString()
 
-
-        Log.e( "user gelmiş", user_name) //TODO: User buraya gelmiyor
         adapterOne = ProfileAdapter(requireContext(), user_name, user_mail, user_phone, viewModel)
 
         design.rvOneAdapter = adapterOne

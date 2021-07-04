@@ -25,6 +25,9 @@
         <action
             android:id="@+id/campaignToCart"
             app:destination="@id/cartFragmentAction" />
+        <action
+            android:id="@+id/campaignToDetailAction"
+            app:destination="@id/productDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -49,7 +52,7 @@
             android:id="@+id/productToCart"
             app:destination="@id/cartFragmentAction" />
         <argument
-            android:name="productObject"
+            android:name="product"
             app:argType="com.begumyolcu.ecommerceproject.entity.Product" />
     </fragment>
 </navigation>

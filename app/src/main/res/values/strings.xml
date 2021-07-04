@@ -36,7 +36,7 @@
     <string name="cartSubtotal">Subtotal:</string>
     <string name="shippingCart">Shipping:</string>
     <string name="cartTotal">Total:</string>
-    <string name="shippingPrice">3.99$</string>
+    <string name="shippingPrice">$3.99</string>
     <string name="cartCheckout">Checkout</string>
     <string name="dollars">\$</string>
 

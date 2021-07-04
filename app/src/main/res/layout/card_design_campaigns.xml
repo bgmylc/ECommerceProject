@@ -3,7 +3,11 @@
 <layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+<data>
+    <variable
+        name="product"
+        type="com.begumyolcu.ecommerceproject.entity.Product" />
+</data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,6 +48,7 @@
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/textColor2"
                     android:textSize="@dimen/buttonTextDimen"
+                    android:text="@{product.product_name}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageViewCampaignCard"
@@ -70,6 +75,7 @@
                     android:layout_marginTop="@dimen/smallDistance"
                     android:fontFamily="@font/poppins"
                     android:textColor="@color/campaignColor"
+                    android:text="@{product.product_price}"
                     android:textSize="@dimen/buttonTextDimen"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"

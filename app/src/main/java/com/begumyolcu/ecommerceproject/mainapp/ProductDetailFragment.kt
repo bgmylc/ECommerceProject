@@ -6,12 +6,15 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.begumyolcu.ecommerceproject.R
 import com.begumyolcu.ecommerceproject.databinding.FragmentEntrySwipeBinding
 import com.begumyolcu.ecommerceproject.databinding.FragmentProductDetailBinding
+import com.begumyolcu.ecommerceproject.entity.Product
 import com.begumyolcu.ecommerceproject.entryviewmodel.EntryLoginFragmentViewModel
 import com.begumyolcu.ecommerceproject.mainappviewmodel.ProductDetailFragmentViewModel
 import com.begumyolcu.ecommerceproject.mainappviewmodel.ProfileFragmentViewModel
+import com.squareup.picasso.Picasso
 
 
 class ProductDetailFragment : Fragment() {
@@ -24,6 +27,16 @@ class ProductDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         design = DataBindingUtil.inflate(inflater, R.layout.fragment_product_detail, container, false)
+
+        val bundle: ProductDetailFragmentArgs by navArgs()
+        val product = bundle.product
+        design.productObject = product
+        design.productDetailFragment = this
+
+        val image = design.imageViewDetailImage
+        Picasso.get().load(product.product_image_url).into(image)
+
+
         return design.root
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +60,10 @@ class ProductDetailFragment : Fragment() {
             else -> return super.onOptionsItemSelected(item)
         }
 
+    }
+
+    fun onCartPressed(product: Product){
+        viewModel.cartStatus(product.id, product.cart_status)
     }
 
 }

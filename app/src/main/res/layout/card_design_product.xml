@@ -12,26 +12,31 @@
             name="productFragment"
             type="com.begumyolcu.ecommerceproject.mainapp.ProductFragment" />
     </data>
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/cardProductHeight"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/ProductCardView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/cardProductHeight"
+            android:layout_marginStart="@dimen/cardSmallDistance"
+            android:layout_marginTop="@dimen/smallDistance"
+            android:layout_marginEnd="@dimen/cardSmallDistance"
+            android:layout_marginBottom="@dimen/cardSmallDistance"
             android:backgroundTint="@color/secondaryColor"
             app:cardCornerRadius="@dimen/buttonCornerDimen">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="@dimen/cardProductHeight">
 
                 <ImageView
                     android:id="@+id/imageViewProductCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/imageDimen"
+                    android:layout_height="@dimen/imageDimen"
                     android:layout_marginStart="@dimen/edgeDistance"
                     android:layout_marginTop="@dimen/largeEdgeDistance"
                     android:layout_marginEnd="@dimen/edgeDistance"
@@ -45,11 +50,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/edgeDistance"
-                    android:layout_marginTop="@dimen/edgeDistance"
-                    android:text="@{product.product_name}"
+                    android:layout_marginTop="28dp"
                     android:fontFamily="@font/poppins"
+                    android:maxLines="3"
+                    android:text="@{product.product_name}"
                     android:textColor="@color/black"
                     android:textSize="@dimen/buttonTextDimen"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageViewProductCard"
                     tools:text="Product Name" />
@@ -62,13 +70,16 @@
                     android:layout_marginTop="@dimen/smallDistance"
                     android:layout_marginBottom="@dimen/edgeDistance"
                     android:fontFamily="@font/poppins"
-                    android:textColor="@color/black"
                     android:text="@{@string/dollars+ ' ' +product.product_price}"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/toolbarTitleDimen"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textViewProductCardName"
+                    app:layout_constraintVertical_bias="0.307"
                     tools:text="Price $" />
 
                 <Button
@@ -76,7 +87,7 @@
                     style="@style/Widget.MaterialComponents.Button.TextButton"
                     android:layout_width="@dimen/buttonDimen"
                     android:layout_height="@dimen/buttonDimen"
-                    android:onClick="@{() -> productFragment.onInfoPressed(product)}"
+                    android:layout_marginBottom="@dimen/cartSmallDistance"
                     app:icon="@drawable/icon_info"
                     app:iconGravity="textStart"
                     app:iconSize="@dimen/smallIconDimen"
@@ -95,6 +106,15 @@
                     app:iconTint="@color/textColor2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/cardSmallDistance"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintGuide_begin="186dp" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
