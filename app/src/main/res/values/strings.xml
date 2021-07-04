@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ECommerceProject</string>
+    <string name="app_name">SFF Guild</string>
     <!-- Entry Activity-->
     <string name="swipeItemText1">Are you tired of living in your bleak life?</string>
     <string name="swipeItemText2">You want to blast into new galaxies?</string>
@@ -15,7 +15,7 @@
     <string name="emailInvalidError">Email is invalid!</string>
     <string name="passwordEmptyError">Password cannot be empty!</string>
     <string name="passwordInvalidError">Password is invalid!</string>
-    <string name="loginSuccessMessage">Welcome, %s !</string>
+    <string name="loginSuccessMessage">Welcome, %s!</string>
     <string name="loginErrorMessage">Wrong username or password</string>
     <!-- Register-->
     <string name="registerAccount">It is nice to see you join!</string>
@@ -28,6 +28,7 @@
     <string name="profileFragment">My Profile</string>
     <string name="campaignFragment">Campaigns</string>
     <string name="addCart">Add to Cart</string>
+    <string name="addedToCart">added to cart!</string>
     <!-- Profile Fragment-->
     <string name="adresses">Adresses</string>
     <string name="favouriteSellers">Favourite Sellers</string>

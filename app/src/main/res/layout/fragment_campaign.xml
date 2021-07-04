@@ -7,6 +7,9 @@
         <variable
             name="adapter"
             type="com.begumyolcu.ecommerceproject.adapters.CampaignAdapter" />
+        <variable
+            name="emptyTitle"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,9 +21,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCampaigns"
             android:layout_width="0dp"
+            android:layout_height="0dp"
             android:adapter="@{adapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbarCampaign" />
@@ -29,6 +33,7 @@
             android:id="@+id/toolbarCampaign"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:title="@{emptyTitle}"
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"

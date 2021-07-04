@@ -9,14 +9,144 @@
             name="adapterOne"
             type="com.begumyolcu.ecommerceproject.adapters.CartAdapter" />
         <variable
-            name="adapterTwo"
-            type="com.begumyolcu.ecommerceproject.adapters.CartSecondAdapter" />
+            name="subtotal"
+            type="Double" />
+        <variable
+            name="total"
+            type="Double" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".mainapp.CartFragment">
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewCartPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/buttonCornerDimen"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:layout_constraintBottom_toTopOf="@+id/buttonCartCheckout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/smallDistance"
+                    android:layout_marginTop="@dimen/smallDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/orderInfo"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/generalTextDimen"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/smallDistance"
+                    android:layout_marginTop="@dimen/smallDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/cartSubtotal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/smallTextDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/smallDistance"
+                    android:layout_marginTop="@dimen/midDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/shippingCart"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/smallTextDimen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/smallDistance"
+                    android:layout_marginTop="@dimen/midDistance"
+                    android:layout_marginBottom="@dimen/midDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/cartTotal"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/smallTextDimen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/smallDistance"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/textViewCartSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/midDistance"
+                    android:layout_marginTop="@dimen/smallDistance"
+                    android:fontFamily="@font/poppins"
+                    android:textColor="@color/textColor2"
+                    android:textSize="@dimen/smallTextDimen"
+                    android:text="@{@string/dollars+ ' ' +subtotal.toString()}"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    tools:text="subtotal price" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/midDistance"
+                    android:layout_marginTop="@dimen/midDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/shippingPrice"
+                    android:textColor="@color/textColor2"
+                    android:textSize="@dimen/smallTextDimen"
+                    app:layout_constraintStart_toEndOf="@+id/textView5"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCartSubtotal" />
+
+                <TextView
+                    android:id="@+id/textViewCartTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/midDistance"
+                    android:layout_marginTop="@dimen/midDistance"
+                    android:layout_marginBottom="@dimen/midDistance"
+                    android:fontFamily="@font/poppins"
+                    android:text="@{@string/dollars+ ' ' +total.toString()}"
+                    android:textColor="@color/textColor2"
+                    android:textSize="@dimen/smallTextDimen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:text="Total Price" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvCartTop"
@@ -52,18 +182,6 @@
                 tools:layout_editor_absoluteY="18dp" />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvCartBottom"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/cartSmallDistance"
-            android:adapter="@{adapterTwo}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/buttonCartCheckout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
         <Button
             android:id="@+id/buttonCartCheckout"
             android:layout_width="0dp"
@@ -75,5 +193,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

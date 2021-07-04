@@ -3,6 +3,7 @@ package com.begumyolcu.ecommerceproject.adapters
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.begumyolcu.ecommerceproject.databinding.CardDesignProductBinding
@@ -12,7 +13,7 @@ import com.begumyolcu.ecommerceproject.mainapp.ProductFragmentDirections
 import com.begumyolcu.ecommerceproject.mainappviewmodel.ProductFragmentViewModel
 import com.squareup.picasso.Picasso
 
-class ProductHomeAdapter(var mContext : Context, var productList : List<Product>, var viewModel: ProductFragmentViewModel) : RecyclerView.Adapter<ProductHomeAdapter.CardDesignHolder>() {
+class ProductHomeAdapter(var mContext : Context, var productList : List<Product>, var viewModel: ProductFragmentViewModel, var toastText : String) : RecyclerView.Adapter<ProductHomeAdapter.CardDesignHolder>() {
     inner class CardDesignHolder(productCardBinding : CardDesignProductBinding) : RecyclerView.ViewHolder(productCardBinding.root){
         var binding : CardDesignProductBinding
         init {
@@ -37,7 +38,9 @@ class ProductHomeAdapter(var mContext : Context, var productList : List<Product>
         holder.binding.product = product
 
         holder.binding.buttonProductCardAddCart.setOnClickListener {
-            viewModel.cartStatus(product.id, product.cart_status)
+            viewModel.cartStatus(product.id, 1)
+
+            Toast.makeText(it.context,product.product_name + toastText, Toast.LENGTH_SHORT).show()
         }
         holder.binding.ProductCardView.setOnClickListener {
             val actionToDetail = ProductFragmentDirections.productDetailAction(product)

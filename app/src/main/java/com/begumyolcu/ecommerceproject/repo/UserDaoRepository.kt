@@ -20,6 +20,10 @@ class UserDaoRepository {
         userList = MutableLiveData()
     }
 
+    fun returnUsers() : MutableLiveData<List<User>> {
+        return userList
+    }
+
     fun loginUser(mail_address: String, password: String) {
         userDaoInterface.loginToApp(mail_address, password).enqueue(object: Callback<UserResponse>{
             override fun onResponse(call: Call<UserResponse>?, response: Response<UserResponse>) {

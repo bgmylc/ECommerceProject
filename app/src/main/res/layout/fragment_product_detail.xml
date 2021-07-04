@@ -6,7 +6,7 @@
 
 <data>
     <variable
-        name="productDetailToolbarTitle"
+        name="emptyTitle"
         type="String" />
     <variable
         name="productObject"
@@ -51,8 +51,9 @@
                 tools:text="Product Details Product Details Product Details" />
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/toolbarDetail"
                 android:layout_width="0dp"
+                app:title="@{emptyTitle}"
                 android:layout_height="wrap_content"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
@@ -69,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:fontFamily="@font/poppins"
-                    android:text="@{productDetailToolbarTitle}"
+                    android:text="@{productObject.product_name}"
                     android:textSize="@dimen/toolbarTitleDimen"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="18dp"
@@ -112,7 +113,7 @@
                 android:layout_marginTop="@dimen/largeEdgeDistance"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintTop_toBottomOf="@+id/toolbarDetail"
                 tools:src="@tools:sample/avatars" />
 
             <Button

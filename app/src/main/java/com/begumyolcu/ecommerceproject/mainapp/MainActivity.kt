@@ -29,10 +29,6 @@ class MainActivity : AppCompatActivity() {
         userPreference.saveData("user_email", loggedUser.mail_address)
         userPreference.saveData("user_phone", loggedUser.phone)
 
-
-
-
-
         editor.apply()
     }
 }

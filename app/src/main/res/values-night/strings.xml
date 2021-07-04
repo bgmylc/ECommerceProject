@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ECommerceProject</string>
+    <string name="app_name">SFF Guild</string>
     <!-- Entry Activity-->
     <string name="swipeItemText1">Are you tired of living in your bleak life?</string>
     <string name="swipeItemText2">You want to blast into new galaxies?</string>
@@ -16,7 +16,7 @@
     <string name="emailInvalidError">Email is invalid!</string>
     <string name="passwordEmptyError">Password cannot be empty!</string>
     <string name="passwordInvalidError">Password is invalid!</string>
-    <string name="loginSuccessMessage">Welcome, %s !</string>
+    <string name="loginSuccessMessage">Welcome, %s!</string>
     <string name="loginErrorMessage">Wrong username or password</string>
     <!-- Register-->
     <string name="registerAccount">It is nice to see you join!</string>

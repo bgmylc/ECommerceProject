@@ -2,6 +2,7 @@ package com.begumyolcu.ecommerceproject.mainapp
 
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
@@ -25,12 +26,14 @@ class ProductFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+
         design =  DataBindingUtil.inflate(inflater, R.layout.fragment_product, container, false)
+        (activity as AppCompatActivity).setSupportActionBar(design.toolbarHome)
+
+        val toastText = getString(R.string.addedToCart)
 
         viewModel.productsList.observe(viewLifecycleOwner, { productsList ->
-            adapter = ProductHomeAdapter(requireContext(), productsList, viewModel)
-            viewModel.campaign(productsList[3].id, productsList[3].product_has_campaign)
-            viewModel.campaign(productsList[2].id, productsList[2].product_has_campaign)
+            adapter = ProductHomeAdapter(requireContext(), productsList, viewModel,toastText)
             design.adapter = adapter
         })
 

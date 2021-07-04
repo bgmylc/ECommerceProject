@@ -36,16 +36,15 @@ class EntryLoginFragment : Fragment() {
         design.entryLoginFragment = this
         design.lifecycleOwner = this
 
-        viewModel.loggedUser.observe(viewLifecycleOwner, { loggedUser ->
-            if (loggedUser != null){
-                logUser = loggedUser
-                val newIntent = Intent(activity, MainActivity::class.java)
-                newIntent.putExtra("user", loggedUser)
-                startActivity(newIntent)
-            }
-            else{
-                Toast.makeText(requireContext(), "Kullanıcı yok", Toast.LENGTH_LONG).show()
-            }
+        viewModel.userList.observe(viewLifecycleOwner, { userList ->
+           if (userList[0].login_value == 1){
+               Toast.makeText(requireContext(), getString(R.string.loginSuccessMessage, userList[0].name_surname), Toast.LENGTH_LONG).show()
+               val newIntent = Intent(activity, MainActivity::class.java)
+               newIntent.putExtra("user", userList[0])
+               startActivity(newIntent)
+           }else{
+               Toast.makeText(requireContext(), getString(R.string.loginErrorMessage), Toast.LENGTH_LONG).show()
+           }
         })
         return design.root
     }
@@ -56,12 +55,11 @@ class EntryLoginFragment : Fragment() {
         val tempViewModel: EntryLoginFragmentViewModel by viewModels()
         this.viewModel = tempViewModel
     }
-
         //TODO: Sharedpreferences ile login yapanı tut
     fun registerPressed(v: View){
         Navigation.findNavController(v).navigate(R.id.loginToRegisterAction)
     }
     fun loginPressed(email: String, password: String){
-        viewModel.validate(email, password)
+        viewModel.login(email, password)
     }
 }

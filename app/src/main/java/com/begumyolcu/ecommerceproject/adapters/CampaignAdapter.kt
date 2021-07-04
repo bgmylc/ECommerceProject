@@ -12,6 +12,7 @@ import com.begumyolcu.ecommerceproject.mainapp.CampaignFragmentDirections
 import com.begumyolcu.ecommerceproject.mainapp.ProductFragmentDirections
 import com.begumyolcu.ecommerceproject.mainappviewmodel.CampaignFragmentViewModel
 import com.squareup.picasso.Picasso
+import kotlin.math.round
 
 class CampaignAdapter(var mContext: Context, var campaignList: List<Product>, var viewModel: CampaignFragmentViewModel) : RecyclerView.Adapter<CampaignAdapter.CardDesignHolder>() {
 
@@ -34,7 +35,7 @@ class CampaignAdapter(var mContext: Context, var campaignList: List<Product>, va
         val image = holder.binding.imageViewCampaignCard
         Picasso.get().load(campaign.product_image_url).into(image)
 
-        holder.binding.textViewCampaignCardOldPrice.text = (campaign.product_price.toDouble()*(100.0/65.0)).toString()
+        holder.binding.textViewCampaignCardOldPrice.text = round((campaign.product_price.toDouble()*(100.0/65.0))).toString()
         holder.binding.campaignCardView.setOnClickListener {
             val campaignToDetail = CampaignFragmentDirections.campaignToDetailAction(campaign)
             Navigation.findNavController(it).navigate(campaignToDetail)

@@ -15,11 +15,20 @@ class EntryLoginFragmentViewModel : ViewModel() {
 
     private val udaor = UserDaoRepository()
     private val statusMessage = MutableLiveData<Event<String>>()
-    var loggedUser:MutableLiveData<User> = MutableLiveData()
-    val message : LiveData<Event<String>>
+    var userList : MutableLiveData<List<User>>
+    val message: LiveData<Event<String>>
         get() = statusMessage
 
-    fun validate(email: String, password: String) : Array<Unit> {
+    init {
+        userList = udaor.returnUsers()
+    }
+
+    fun login(email: String, password: String) {
+       udaor.loginUser(email, password)
+    }
+}
+
+   /* fun validate(email: String, password: String) : Array<Unit> {
 
         val emailError = ObservableInt()
         val passwordError = ObservableInt()
@@ -37,14 +46,13 @@ class EntryLoginFragmentViewModel : ViewModel() {
                     }
                 }
             }
-            return arrayOf(emailError.set(0), passwordError.set(0)) //TODO: bunu ne yapsam?
+            return arrayOf(emailError.set(0), passwordError.set(0))
         }
         else{
             return arrayOf(emailError.set(isEmailValid!!), passwordError.set(isPasswordValid!!))
         }
 
     }
-
 
     fun validateEmail(email: String): Int? {
         if (email.isEmpty()){
@@ -65,5 +73,4 @@ class EntryLoginFragmentViewModel : ViewModel() {
             return R.string.passwordEmptyError
         }
         return null
-    }
-}
+    }*/

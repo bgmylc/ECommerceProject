@@ -2,6 +2,8 @@ package com.begumyolcu.ecommerceproject.mainapp
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
@@ -27,6 +29,9 @@ class ProductDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         design = DataBindingUtil.inflate(inflater, R.layout.fragment_product_detail, container, false)
+
+        (activity as AppCompatActivity).setSupportActionBar(design.toolbarDetail)
+        design.emptyTitle =  ""
 
         val bundle: ProductDetailFragmentArgs by navArgs()
         val product = bundle.product
@@ -59,11 +64,12 @@ class ProductDetailFragment : Fragment() {
             }
             else -> return super.onOptionsItemSelected(item)
         }
-
     }
 
     fun onCartPressed(product: Product){
-        viewModel.cartStatus(product.id, product.cart_status)
+        viewModel.cartStatus(product.id, 1)
+        val toastText = getString(R.string.addedToCart)
+        Toast.makeText(requireContext(),product.product_name + " " + toastText, Toast.LENGTH_SHORT).show()
     }
 
 }

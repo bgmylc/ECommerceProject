@@ -30,6 +30,10 @@ class CartAdapter (var mContext : Context, var cartList : List<Product>, var vie
         holder.binding.product = product
         val image = holder.binding.imageViewCartCard
         Picasso.get().load(product.product_image_url).into(image)
+
+        holder.binding.buttonCartCardDelete.setOnClickListener {
+            viewModel.cartDelete(product.id)
+        }
     }
 
     override fun getItemCount(): Int {
